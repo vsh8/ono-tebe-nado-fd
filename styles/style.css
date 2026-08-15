@@ -1,1 +1,295 @@
-/* место для вашего кода */
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* To use the overlay, make its parent a positioning context and isolate its
+   stacking context.  The negative z-index then places the overlay behind the
+   content without moving the entire parent behind adjacent elements. */
+.overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.6;
+  background-color: #000;
+}
+
+.header {
+  display: grid;
+  /* Equal outer columns keep the logo centered on the page, even though
+     the menu and address have different widths. */
+  grid-template-columns: 1fr min-content 1fr;
+  align-items: center;
+  padding: 92px 50px 96px;
+}
+
+.header__menu-list {
+  display: flex;
+  gap: 33px;
+
+  font-size: 18px;
+  font-style: normal;
+  list-style: circle;
+}
+
+.header__menu-list-item_no-bullit {
+  list-style: none;
+}
+
+.header__menu-link_active {
+  text-decoration: none;
+}
+
+.header__logo {
+  width: 136px;
+  height: 105px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.header__address {
+  justify-self: end;
+  max-width: 240px;
+  padding-right: 5px; /* Narrows the text block to match the line breaks in Figma. */
+}
+
+.cover {
+  /* This element is covered by an overlay, so it needs a positioning context
+     and an isolated stacking context. */
+  isolation: isolate;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 757px;
+  margin: 0 0 180px;
+  padding: 165px 50px 50px;
+
+  color: #fff;
+  text-transform: uppercase;
+
+  background-image: url("../images/cover.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cover__title {
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 1.15;
+  letter-spacing: 30px;
+}
+
+.cover__description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover__description-text {
+  font-size: 22px;
+  line-height: 1.25;
+  word-spacing: 18px;
+}
+
+.cover__bet-button {
+  padding: 11px 31px;
+  border: 1px solid white;
+
+  font-size: 22px;
+  color: #fff;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  appearance: none;
+  background-color: transparent;
+}
+
+.lots {
+  margin: 0 24px 120px;
+}
+
+.lots__heading {
+  margin: 0 0 27px 40px;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lots__card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+}
+
+.lots__card-list-item {
+  width: 334px;
+  min-height: 596px;
+}
+
+.lots__card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.lots__card {
+  /* This element is covered by an overlay, so it needs a positioning context
+     and an isolated stacking context. */
+  isolation: isolate;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  padding: 48px 40px;
+
+  color: #fff;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.lots__card-type-film {
+  background-image: url("../images/card-lot-01.jpg");
+}
+
+.lots__card-type-book {
+  background-image: url("../images/card-lot-02.jpg");
+}
+
+.lots__card-type-picture {
+  background-image: url("../images/card-lot-03.jpg");
+}
+
+.lots__card-title {
+  font-size: 22px;
+  line-height: 1.2;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+}
+
+.lots__card-text {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.lots__look-more-link {
+  display: block;
+  margin: 30px 0 0 40px;
+  font-size: 20px;
+}
+
+.about {
+  display: grid;
+
+  /* Keeps the left column the same width as a lot card. */
+  grid-template-columns: 334px auto;
+  gap: 25px;
+  margin: 0 24px 180px;
+}
+
+.about__column-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 240px;
+  height: 240px;
+  margin: 35px auto 0;
+  border-radius: 50%;
+
+  background-color: #000;
+}
+
+.about__logo-image {
+  width: 148px;
+}
+
+.about__title {
+  margin: 136px 0 100px;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding-right: 5px; /* Narrows the text block to match the line breaks in Figma. */
+
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 50px 82px;
+}
+
+.footer__menu-list {
+  font-size: 18px;
+  text-align: center;
+  list-style: none;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 48px;
+  justify-self: end;
+  list-style: none;
+}
+
+.footer__social-icon {
+  width: 48px;
+}
+
+/* Apply this class to the final letter in a line to remove its trailing spacing. */
+.no-letter-spacing {
+  letter-spacing: 0;
+}
+
+.aligned-text {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.aligned-text_left {
+  text-align: left;
+}
+
+.aligned-text_center {
+  text-align: center;
+}
+
+.aligned-text_right {
+  text-align: right;
+}
