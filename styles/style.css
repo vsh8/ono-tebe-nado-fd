@@ -36,7 +36,7 @@ a {
   list-style: circle;
 }
 
-.header__menu-list-item_no-bullit {
+.header__menu-list-item:first-child {
   list-style: none;
 }
 
